@@ -1,0 +1,212 @@
+:root {
+    --swiper-theme-color: #90278e;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    color:#484848;
+}
+
+/*** Bootstrap Override ***/
+a {
+    color: #90278e;
+    transition: all ease-in-out 0.15s;
+}
+
+a:hover {
+    color: #681c67;
+    text-decoration: none;
+    transition: all ease-in-out 0.15s;
+}
+
+.text-pink{
+    color:#b62673;
+}
+.btn{
+    border-radius: 0;
+}
+.form-control{
+    border-radius: 0;
+}
+
+.form-control:focus{
+    border-color: transparent;
+    box-shadow: 0 0 0 0.1rem rgb(101 45 144 / 30%);
+}
+
+/***** Extend Bootstrap Classes *****/
+.font-weight-medium{
+    font-weight: 600;
+}
+
+.btn.focus, .btn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgb(101 45 144 / 30%);
+}
+
+.btn-purple {
+    color: #fff;
+    background-color: #652d90;
+    border-color: #652d90;
+}
+.btn-purple:hover {
+    color: #fff;
+    background-color: #3d1b57;
+    border-color: #3d1b57;
+}
+
+.btn-purple:not(:disabled):not(.disabled).active, .btn-purple:not(:disabled):not(.disabled):active, .show>.btn-purple.dropdown-toggle{
+    color: #fff;
+    background-color: #522475;
+    border-color: #522475;
+}
+.btn-pink {
+    color: #fff;
+    background-color: #90278e;
+    border-color: #90278e;
+}
+.btn-pink:hover {
+    color: #fff;
+    background-color: #681c67;
+    border-color: #681c67;
+}
+
+.btn-pink:not(:disabled):not(.disabled).active, .btn-pink:not(:disabled):not(.disabled):active, .show>.btn-pink.dropdown-toggle{
+    color: #fff;
+    background-color: #681c67;
+    border-color: #681c67;
+}
+
+/* top */
+
+#top-bar {
+    background-color: #EEEEEE;
+    height: 40px;
+}
+
+#top-bar .btn-link, #top-bar li, #top-bar a {
+    color: #888;
+    text-shadow: 0 1px 0 #FFF;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+#top-bar .btn-link:hover, #top-bar a:hover {
+    color: #444;
+}
+
+#top-bar .dropdown-menu a {
+    text-shadow: none;
+}
+
+#top-bar .dropdown-menu a:hover {
+    color: #FFF;
+}
+
+#top-bar .fab {
+    font-size: 1.2rem;
+}
+
+/* Main Menu */
+
+#main-menu {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+#logo {
+    max-width: 200px;
+}
+
+/*** Sliders **/
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-full-width .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-cards .swiper-slide {
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+/*** Product card ***/
+
+.product-card{
+    /* border:1px solid rgb(0 0 0 / 5%);
+    border-radius:0; */
+    border: 0;
+    border-radius: 0;
+    box-shadow: 0px 0px 7px 0 #9e1f631a;
+}
+
+.product-card .product-price{
+    font-family: '';
+    font-size:1.5rem;
+    font-weight: 700;
+    color: #b62673;
+    font-family: 'Roboto';
+}
+.product-card .product-price .price-old{
+    font-size:1.2rem;
+    text-decoration: line-through;
+    color: #aaaaaa;
+    font-weight: 400;
+}
+
+.section-title h3 {
+    /* color: #191919; */
+    border-bottom: 1px solid #9e1f6326;
+    padding-bottom: 8px;
+    margin-bottom: 0;
+    position: relative;
+    z-index: -1;
+    bottom: -2px;
+}
+
+.section-title h3::before {
+    background-color: #d91c5c;
+    height: 3px;
+    width: 70px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: "";
+    margin-bottom: -1px;
+}

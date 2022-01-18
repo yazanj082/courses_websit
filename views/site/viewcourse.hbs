@@ -1,0 +1,45 @@
+{{> siteheader }}
+<div class="container-fluid mt-4">
+  
+      <div class="row ml-1">
+    <h3>{{name}}</h3>
+   </div>
+   
+   
+    <div class="container-fluid mt-5 rounded-top " style="background-color:#353a40 ;height:100%;">
+        <div class="row justify-content-center m-10" > <h2 style="color: red;">{{error}}</h2></div>
+           
+            
+               <div class="row m-5 " align="center">
+                   <h2 style="color: white;">Video:-</h2>
+                   </div>
+                   <div class="row m-5 justify-content-center" align="center">
+                  {{#if vurl}}<iframe height="100%"  src="{{vurl}}"  allowfullscreen></iframe>{{/if}}
+                  </div>
+               
+                <div class="row m-5 " >
+                    <h2 style="color: white;">description:-</h2>
+                    </div>
+                     <div class="row m-5 " >
+                  <p style="color: white;">{{description}}</p>
+               
+   </div>
+            
+            <div class="row" >
+                
+                <div class=" m-5" align="center" >
+                    
+                <p style="color: white;font-weight:100;" class="border border-white rounded">{{ category}}</p>
+                </div>
+                </div>
+            <div class="row mt-5 justify-content-center ">
+                <h2 style="color: white;">Course Files:-</h2>
+               {{#if vurl}} <a class="btn btn-green col-sm-2"  href="/download/{{id}}" >download pdf</a>{{/if}}
+            </div>
+
+    </div>
+    
+
+
+</div>
+{{> sitefooter }}

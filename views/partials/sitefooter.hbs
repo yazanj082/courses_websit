@@ -1,0 +1,55 @@
+</div>
+</div>
+
+    <script src="/js/jquery-3.6.0.min.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/swiper.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            var swiper_full_width = new Swiper('.swiper-full-width', {
+                spaceBetween: 30,
+                hashNavigation: {
+                    watchState: true,
+                },
+                pagination: {
+                    el: '.swiper-full-width .swiper-pagination',
+                    clickable: true,
+                },
+            });
+
+            var swiper_cards = new Swiper('.swiper-cards', {
+                //slidesPerView: 3,
+                spaceBetween: 30,
+                pagination: {
+                    el: '.swiper-cards .swiper-pagination',
+                    clickable: true,
+                },
+                breakpoints: {
+                    576: {
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                    },
+                    768: {
+                        slidesPerView: 3,
+                        spaceBetween: 40,
+                    },
+                    992: {
+                        slidesPerView: 3,
+                        spaceBetween: 40,
+                    },
+                    1200: {
+                        slidesPerView: 4,
+                        spaceBetween: 50,
+                    },
+                    1600: {
+                        slidesPerView: 5,
+                        spaceBetween: 50,
+                    },
+                }
+            });
+
+        });
+    </script>
+</body>
+</html>

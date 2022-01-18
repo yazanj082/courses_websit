@@ -1,0 +1,74 @@
+{{> adminheader }}
+<div class="container text-center font-size:20" >
+    <div  style="background-color: red;">
+        {{#each error}}
+        <h1 class="row mx-auto">{{msg}} in the feild {{param}}</h1>
+        {{/each}}
+        
+    </div>
+</div>
+<div class="container mx-auto rounded mt-4" style="background-color: white; width:100%">
+<div  class="m-2">
+    
+    <form method="post" action="/course/edit/{{id}}" enctype="multipart/form-data">
+    
+    <div class="form-group row">
+        <label >Name </label>
+        <input class="form-control"  type="text" value="{{name}}" name="name" required>
+    </div>
+     <div class="form-group row">
+        <label >Description </label>
+        <textarea class="form-control"  type="text"  name="description" required>{{description}}</textarea>
+    </div>
+     <div class="form-group row">
+        <label >Video URL </label>
+        <input class="form-control" name="vurl" value="{{vurl}}" placeholder="https://youtube.com/example"
+         pattern="^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w\-]+\?v=|embed\/|v\/)?)([\w\-]+)(\S+)?$" required>
+    </div>
+   
+    
+         <div class="form-group row">
+        <label >Course Image </label>
+        
+        <input class="form-control " type="file" name="image" accept="image/*" />
+    </div>
+      <div class="form-group row">
+        <label >Course Files </label>
+        
+        <input class="form-control "  type="file" name="pdf" accept="application/pdf" />
+    </div>
+        <div class="form-group row">
+            <label >Category</label>
+            {{is_selected categories category_id}}
+                <select class="form-control " name="category_id" >
+                   
+                {{#each categories}}
+
+                    <option value={{_id}} {{selected}}>{{name}}</option>
+                {{/each}}
+                   
+                </select>
+            
+        </div>
+   
+   
+ <div class="form-group row">
+    <div class="custom-control custom-switch">
+                        <input type="checkbox" name="enabled" class="custom-control-input" id="show-on-menu" {{enabled}}>
+                        <label class="custom-control-label" for="show-on-menu">show on site</label>
+                    </div>
+                    </div>
+
+    <div class=" text-center">
+                <button class="btn btn-primary px-4" type="submit">Save</button>
+    </div>
+   
+   <div class="text-center mt-2">
+     <a  href="/admin/courses"  class="btn btn-secondary">go back</a>
+    </div>
+   
+    </form>
+    </div>
+
+</div>
+{{> adminfooter }}

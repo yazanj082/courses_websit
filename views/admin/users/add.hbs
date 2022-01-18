@@ -1,0 +1,54 @@
+{{> authheader }}
+<div class="container text-center " >
+    <div  style="background-color: red;">
+        {{#each error}}
+        <h1 class="row mx-auto">{{msg}} in the feild {{param}}</h1>
+        {{/each}}
+        
+    </div>
+</div>
+<div class="container mx-auto rounded mt-4" style="background-color: white; width:fit-content">
+<div  class="m-2">
+    
+    
+    <form method="post" action="/user/add" >
+    <div class=" row">
+       <a class="mx-auto" href="/admin/" > <img class="img-responsive" src="/images/logo.png" ></a>
+    </div>
+    <div class="form-group row">
+        <label >First Name </label>
+        <input class="form-control"  type="text"  name="fname" required>
+    </div>
+     <div class="form-group row">
+        <label >Last Name </label>
+        <input class="form-control"  type="text"  name="lname" required>
+    </div>
+    <div class="form-group row">
+        <label >Email </label>
+        <input class="form-control"  type="email"  name="email" required>
+    </div>
+    <div class="form-group row">
+        <label >Password </label>
+        <input class="form-control" placeholder="min 8 chars (a-zA-Z0-9)" type="password"  name="password" required>
+    </div>
+     <div class="form-group row">
+        <label >Confirm Password </label>
+        <input class="form-control"  type="password"  name="cpassword" required>
+    </div>
+     <div class="form-group row">
+    <div class="custom-control custom-switch">
+                        <input type="checkbox" name="suspended" class="custom-control-input" id="show-on-menu">
+                        <label class="custom-control-label" for="show-on-menu">suspended</label>
+                    </div>
+                    </div>
+    <div class=" text-center">
+                <button class="btn btn-primary px-4" type="submit">Add</button>
+    </div>
+    <div class="text-center mt-2">
+     <a  href="/admin/users"  class="btn btn-secondary">go back</a>
+    </div>
+    </form>
+    </div>
+
+</div>
+{{> authfooter }}

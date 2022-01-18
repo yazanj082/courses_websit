@@ -1,0 +1,40 @@
+{{> adminheader }}
+<div class="container text-center " >
+    <div  style="background-color: red;">
+        {{#each error}}
+        <h1 class="row mx-auto">{{msg}} in the feild {{param}}</h1>
+        {{/each}}
+        
+    </div>
+</div>
+<div class="container mx-auto rounded mt-4" style="background-color: white; width:fit-content">
+<div  class="m-2">
+    
+    
+    <form method="post" action="/category/edit/{{id}}" >
+    
+    <div class="form-group row">
+        <label >Name </label>
+        <input class="form-control"  type="text"  name="name" value="{{name}}" placeholder="just alpha chars allowed" required>
+    </div>
+   
+ <div class="form-group row">
+    <div class="custom-control custom-switch">
+                        <input type="checkbox" name="enabled" class="custom-control-input" id="show-on-menu" {{enabled}}>
+                        <label class="custom-control-label" for="show-on-menu">show on menu</label>
+                    </div>
+                    </div>
+
+    <div class=" text-center">
+                <button class="btn btn-primary px-4" type="submit">Save</button>
+    </div>
+   
+   <div class="text-center mt-2">
+     <a  href="/admin/categories"  class="btn btn-secondary">go back</a>
+    </div>
+   
+    </form>
+    </div>
+
+</div>
+{{> adminfooter }}

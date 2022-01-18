@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Learning</title>
+    <link rel="stylesheet" href="/fonts/nunito/stylesheet.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/fontawesome.min.css">
+     <link rel="stylesheet" href="/css/swiper.min.css">
+     <link rel="stylesheet" href="/css/style.css">
+     
+   
+</head>
+
+<body>
+     
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+  <a class="navbar-brand" href="/"> <img class="img-responsive" src="/images/logo.png" ></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      
+      <li class="nav-item">
+        <a class="nav-link" href="/allcourses">All Courses</a>
+      </li>
+      
+    </ul>
+     <ul class="navbar-nav mr-1 mt-2 mt-lg-0">
+      <li class="nav-item active ">
+        <a class="btn btn-outline-success my-2 my-sm-0" href="/{{identity}}">{{identity}} <span class="sr-only">(current)</span></a>
+      </li>
+     
+    </ul>
+   
+  </div>
+</nav>
+        <div class="container-fluid">
+        <div class="row mt-2">
+            
+        <div class="ml-2">
+      <form class="form-inline my-2 my-lg-0 " action="/search" method="POST">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search for a course" name="name">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+        </div>
+        <div class="mx-auto"></div>
+    <div class="filter mr-1">
+  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Categories
+  </a>
+
+  <div class="dropdown-menu mr-1" aria-labelledby="dropdownMenuLink">
+    {{#each categories}}
+    <a class="dropdown-item" href="/viewcategory/{{_id}}">{{name}}</a>
+ 
+    {{/each}}
+  </div>
+</div>
+    </div>
+    
+<div class="row">
+   

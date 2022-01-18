@@ -1,0 +1,69 @@
+{{> siteheader }}
+<div class="container-fluid mt-2">
+    <div class="row">
+
+                <div class="swiper-full-width swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" data-hash="slide1"  >
+                            <img src="/images/image1.png" >
+                        </div>
+                     
+                        <div class="swiper-slide" data-hash="slide2">
+                            <img src="/images/image3.png" >
+                        </div>
+
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+            
+    </div>
+    </div>
+    <h3>LAST ADDED COURSES:-</h3>
+   
+       <div class="container-fluid mt-5 rounded-top " style="background-color:#353a40 ;height: 53%;">
+           
+            <div class="col-12">
+                
+                <div class="swiper-cards swiper-container pb-5 pt-3 px-2 ">
+                    <div class="swiper-wrapper">
+                        
+                        
+                    {{#each courses}}
+                      
+
+                        <div class="swiper-slide ">
+                             
+                            <div class="course-card card " >
+                                <div class="card-body " >
+                                <h5 class="card-title font-weight-medium">{{name}}</h5>
+                                <p class="card-text" >{{length description}}</p>
+                                </div>
+                                <img  src="/images/{{_id}}.png" class="" alt="">
+                               
+                                <div class="card-footer bg-white text-center border-0 pt-0" >
+                                    <hr>
+                                    <a href="/viewCourse/{{_id}}" class="btn btn-green px-4 py-2"><i class="fas fa-book"></i> View Course</a>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        
+                    
+
+{{/each}}    
+                    </div>
+                       
+                    <!-- Add Pagination -->
+                    
+                    
+                    <div class="swiper-pagination"></div>
+                    
+                </div>
+            
+            </div>
+        </div>
+    
+
+
+</div>
+{{> sitefooter }}

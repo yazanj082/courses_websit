@@ -1,0 +1,87 @@
+{{> siteheader }}
+<div class="container-fluid mt-4">
+  
+      <div class="row ml-1">
+    <h3>{{name}}</h3>
+   </div>
+     <div class="row mt-4">
+        <p class="ml-4">sort:</p>
+   <div class="filter ml-1">
+       
+  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    {{sort}}
+  </a>
+
+  <div class="dropdown-menu mr-1" aria-labelledby="dropdownMenuLink">
+    <a class="dropdown-item" href="/search/sort/alphabetical(ascending)">alphabetical(ascending)</a>
+    <a class="dropdown-item" href="/search/sort/alphabetical(descending)">alphabetical(descending)</a>
+    <a class="dropdown-item" href="/search/sort/date(newer first)">date(newer first)</a>
+    <a class="dropdown-item" href="/search/sort/date(older first)">date(older first)</a>
+  </div>
+</div>
+<div class="mx-auto"></div>
+<div class="mr-1">
+<p>items per page:</p></div>
+
+
+<div class="filter mr-4">
+    
+  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    {{ipp}}
+  </a>
+
+  <div class="dropdown-menu mr-1" aria-labelledby="dropdownMenuLink">
+    <a class="dropdown-item" href="search/items/4">4</a>
+    <a class="dropdown-item" href="search/items/8">8</a>
+    <a class="dropdown-item" href="search/items/12">12</a>
+    <a class="dropdown-item" href="search/items/16">16</a>
+  </div>
+</div>
+
+
+
+
+  </div> 
+   
+    <div class="container-fluid mt-5 rounded-top " style="background-color:#353a40 ;height: 100%;">
+           <div class="row m-4" >
+  {{#each courses}}
+    <div class="col-sm-3 mt-2">
+
+<div class="course-card card ">
+                                <div class="card-body">
+                                <h5 class="card-title font-weight-medium">{{name}}</h5>
+                                 <p class="card-text">{{length description}}</p>
+                                </div>
+                                <img   src="/images/{{_id}}.png" class="" alt="">
+                               
+                                <div class="card-footer bg-white text-center border-0 pt-0">
+                                    <hr>
+                                    <a href="/viewCourse/{{_id}}" class="btn btn-green px-4 py-2"><i class="fas fa-book"></i> View Course</a>
+                                </div>
+                            </div>
+    </div>
+    {{/each}}
+
+
+   
+
+  
+</div>
+ <div class="row pt-5 justify-content-center" >
+      <nav aria-label="Page navigation example">
+  <ul class="pagination">
+    {{#each nums}}
+    <li class="page-item mx-1 {{active}}"><a class="page-link" href="/search/page/{{num}}">{{num}}</a></li>
+    {{/each}}
+    
+  </ul>
+</nav>
+     </div>
+
+    </div>
+    
+
+
+</div>
+{{> sitefooter }}

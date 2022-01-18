@@ -1,0 +1,52 @@
+{{> adminheader}}
+
+<div class="row mt-3">
+      
+    <div class="col-12 text-right mb-2">
+        <a href="/admin/users/pended" class="btn btn-secondary " >
+           
+            show pended users
+        </a>
+        <a href="/user/add" class="btn btn-primary btn-index" >
+            <i class="fas fa-plus"></i>
+            Add new user
+        </a>
+    </div>
+    
+    <div class="col-12">
+        <table class="table table-bordered table-striped w-100" style="background-color: white;">
+            <thead class="bg-dark text-white">
+                <tr>
+                   
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>suspended</th>
+                    
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+             {{#each users}}
+                <tr>
+                   <td>{{Fname}}</td>
+                    <td>{{Lname}}</td>
+                    <td>{{email}}</td>
+                    <td> {{suspended}}</td>
+                    <td>
+                        <a href="/user/edit/{{_id}}" class="btn btn-warning" title="Edit this user">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                        <a href="/user/delete/{{_id}}" class="btn btn-danger" title="Delete this user">
+                            <i class="fas fa-times"></i>
+                        </a>
+                    </td>
+                </tr>
+                {{/each}}
+                
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{{> adminfooter}}
